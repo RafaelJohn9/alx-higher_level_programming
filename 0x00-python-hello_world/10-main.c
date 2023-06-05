@@ -1,4 +1,3 @@
-carrie@ubuntu:~/0x00$ cat 10-main.c
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
