@@ -8,11 +8,11 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *hare = (*head)->next;
-	listint_t *tortoise = *head;
+	listint_t *hare = (*head);
+	listint_t *tortoise;
 	listint_t *new_node;
 
-	if (!(*head))
+	if (head == NULL)
 	{
 		return (NULL);
 	}
@@ -21,6 +21,15 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		return (NULL);
 	}
+	if (*head == NULL)
+	{
+		new_node->n = number;
+		new_node->next = NULL;
+		*head = new_node;
+		return (*head);
+	}
+	tortoise = *head;
+	hare = (*head)->next;
 	while (tortoise)
 	{
 		if (number < (tortoise->n))
@@ -37,7 +46,7 @@ listint_t *insert_node(listint_t **head, int number)
 			tortoise->next = new_node;
 			return (*head);
 		}
-		else if ((tortoise->n) < number && (hare->n) > number)
+		else if ((tortoise->n) <= number && (hare->n) >= number)
 		{
 			new_node->n = number;
 			new_node->next = hare;
