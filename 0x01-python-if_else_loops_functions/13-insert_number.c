@@ -12,6 +12,10 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *tortoise = *head;
 	listint_t *new_node;
 
+	if (!(*head))
+	{
+		return (NULL);
+	}
 	new_node = malloc(sizeof(listint_t));
 	if (!new_node)
 	{
@@ -19,11 +23,12 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	while (tortoise)
 	{
-		if (number < tortoise->n)
+		if (number < (tortoise->n))
 		{
 			new_node->n = number;
 			new_node->next = tortoise;
-			return (new_node);
+			*head = new_node;
+			return (*head);
 		}
 		else if (!hare)
 		{
