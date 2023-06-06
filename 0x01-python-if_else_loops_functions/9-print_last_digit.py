@@ -6,7 +6,7 @@ def print_last_digit(number):
     # checks if number is 0
     if (number == 0):
         print(number, end="")
-        return
+        return (0)
 
     # if last number is less than 0
     if (number < 0):
