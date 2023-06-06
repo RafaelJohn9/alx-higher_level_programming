@@ -8,6 +8,7 @@ if (number < 0):
     sign = -1
     number *= sign
 last_num = number % 10
+last_num *= sign
 number *= sign
 
 # global statements
