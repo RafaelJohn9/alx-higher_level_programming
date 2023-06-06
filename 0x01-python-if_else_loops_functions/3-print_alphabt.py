@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 
 # takes the ASCII CODE converts them to char
 for i in range(97, 123):
@@ -6,4 +6,4 @@ for i in range(97, 123):
     if (i == 101 or i == 113):
         continue
     else:
-        print(chr(i), end="")
+        print("{}".format(chr(i)), end="")
