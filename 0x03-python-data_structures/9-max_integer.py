@@ -8,11 +8,11 @@ Returns:biggest int
 
 
 def max_integer(my_list=[]):
-    maxValue = 0
     length = len(my_list)
     if length == 0:
         return None
 
+    maxValue = my_list[0]
     while length:
         index = length - 1
         if my_list[index] > maxValue:
