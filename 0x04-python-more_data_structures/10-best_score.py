@@ -6,6 +6,7 @@ a_dictionary=the dict to be checked
 Returns:key with biggest int
 '''
 
+
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
