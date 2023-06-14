@@ -6,6 +6,8 @@ common_elements- returns a set of common elements in two sets.
 @set_2:second set
 Return: a set
 '''
+
+
 def common_elements(set_1, set_2):
     new_set = set()
 
