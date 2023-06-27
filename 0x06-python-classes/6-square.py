@@ -21,7 +21,7 @@ class Square:
         Returns:
             int: The size of the square.
         """
-        return self.__size
+        return self.size
 
     @size.setter
     def size(self, value):
@@ -51,9 +51,11 @@ class Square:
         """ Positions the square
         checks condition
         """
-        if not isinstance(value, tuple) or len(value) != 2 or \
-                not all(isinstance(num, int) for num in value) or \
-                not all(num >= 0 for num in value):
+        if not isinstance(value, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if (len(value) != 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(coord, int) and coord >= 0 for coord in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
