@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-'''
-Square - empty class
-'''
+""" Square - empty class """
 
 
 class Square:
