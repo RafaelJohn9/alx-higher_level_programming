@@ -5,13 +5,14 @@
 class Square:
     """Represent a square."""
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize a new Square instance.
 
         Args:
             size (int): The size of the square. Default is 0.
         """
         self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -72,3 +73,5 @@ class Square:
         else:
             for _ in range(self.__size):
                 print("#" * self.__size)
+            for _ in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
