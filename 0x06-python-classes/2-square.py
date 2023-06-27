@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
-'''
-Square - empty class
-'''
+""" Square - receives size makes it private atrribute"""
+
 
 
 class Square:
     def __init__(self, size=0):
+        """ Square - receives size makes it private atrribute"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
