@@ -5,8 +5,8 @@
 
 
 class Square:
+    """ Square - receives size makes it private atrribute"""
     def __init__(self, size=0):
-        """ Square - receives size makes it private atrribute"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
