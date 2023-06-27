@@ -6,4 +6,4 @@ Square - empty class
 
 
 class Square:
-    __dict__ = {}
+    pass
