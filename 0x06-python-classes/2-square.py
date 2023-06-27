@@ -3,7 +3,6 @@
 """ Square - receives size makes it private atrribute"""
 
 
-
 class Square:
     """ Square - receives size makes it private atrribute"""
     def __init__(self, size=0):
