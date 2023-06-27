@@ -4,7 +4,7 @@
 
 
 class Square:
-    """ Square - object it is a 2d object """
+    """ Square - gets attributes of square"""
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -13,6 +13,6 @@ class Square:
         else:
             self.__size = size
 
-    """ Square - object it is a 2d object """
+    """ area - gets area of square """
     def area(self):
         return self.__size * self.__size
