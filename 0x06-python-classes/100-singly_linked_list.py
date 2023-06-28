@@ -48,6 +48,8 @@ class SinglyLinkedList:
     def sorted_insert(self, value):
         """ enter the node in a sorted manner
         from the lowest number to the highest"""
+        if not isinstance(value, int):
+            raise TypeError("data must be an integer")
         new_node = Node(value)
         if self.__head is None or self.__head.data >= value:
             new_node.next_node = self.__head
