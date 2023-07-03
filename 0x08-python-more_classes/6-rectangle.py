@@ -2,15 +2,17 @@
 
 """ this is a class that defines a rectangle """
 
+
 class Rectangle:
     """ a real definition of Rectangle """
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """ initializes attributes"""
         self.__width = width
         self.__height = height
-        
-        #this is the counting of number of instances
+
+        # this is the counting of number of instances
         Rectangle.number_of_instances += 1
 
     @property
@@ -26,7 +28,6 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
 
     @property
     def height(self):
@@ -60,9 +61,10 @@ class Rectangle:
                 rectangle += '#'
             rectangle += '\n'
         return rectangle
-    
+
     def __repr__(self):
         """  output  a str explaining class input"""
+
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):

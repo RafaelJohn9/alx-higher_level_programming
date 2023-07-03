@@ -6,6 +6,7 @@
 class Rectangle:
     """ a real definition of Rectangle """
     def __init__(self, width=0, height=0):
+        """ initialises rectangle attributes"""
         self.__width = width
         self.__height = height
 

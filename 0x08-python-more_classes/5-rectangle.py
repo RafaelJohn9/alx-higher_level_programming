@@ -2,6 +2,7 @@
 
 """ this is a class that defines a rectangle """
 
+
 class Rectangle:
     """ a real definition of Rectangle """
     def __init__(self, width=0, height=0):
@@ -22,7 +23,6 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
 
     @property
     def height(self):
@@ -56,7 +56,7 @@ class Rectangle:
                 rectangle += '#'
             rectangle += '\n'
         return rectangle
-    
+
     def __repr__(self):
         """  output  a str explaining class input"""
         return f"Rectangle({self.__width}, {self.__height})"
