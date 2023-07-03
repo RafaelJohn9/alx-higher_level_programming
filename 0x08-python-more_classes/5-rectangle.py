@@ -50,12 +50,9 @@ class Rectangle:
 
     def __str__(self):
         """  output  a str rectangle made of #"""
-        rectangle = ""
-        for row in range(0, self.__height):
-            for column in range(0, self.__width):
-                rectangle += '#'
-            rectangle += '\n'
-        return rectangle
+        if self.width == 0 or self.height == 0:
+            return ""
+        return "\n".join([str(self.print_symbol) * self.width] * self.height)
 
     def __repr__(self):
         """  output  a str explaining class input"""
