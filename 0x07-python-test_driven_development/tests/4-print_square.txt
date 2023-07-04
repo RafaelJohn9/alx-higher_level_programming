@@ -1,0 +1,43 @@
+This is a documentation that checks the workings of function print_square(size)
+size is the width/length of the square
+
+these are test cases where there are normal inputs thus expecting normal outputs
+>>> print_square=__import__("4-print_square").print_square
+>>> print_square(3)
+###
+###
+###
+
+
+
+these are test cases where there are no normal inputs and are being checked if they are handled correctly
+
+#when size is a string
+>>> print_square("g")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+#when size is less than 0
+>>> print_square(-3)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+#when size is int inf
+>>> print_square(int("inf"))
+Traceback (most recent call last):
+...
+ValueError: invalid literal for int() with base 10: 'inf'
+
+#when size is None
+>>> print_square(None)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+#when no argument is passed
+>>> print_square()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'

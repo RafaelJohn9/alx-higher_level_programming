@@ -1,0 +1,33 @@
+This is a documentation about say_my_name function(first_name, last_name)
+
+
+
+these are some test cases to test the correct functioning
+>>> say_my_name=__import__("3-say_my_name").say_my_name
+
+# checks correct output when correct input is inserted
+>>> say_my_name("John", "me")
+My name is John me
+
+#checks when only first name is inserted
+>>> say_my_name("John")
+My name is John 
+
+#checks when first name is empty string
+>>> say_my_name("", "me")
+My name is  me
+
+
+these are some test cases to handle error handling
+#first name when not a string
+>>> say_my_name(8, "me")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+#last name when not a string
+>>> say_my_name("punjab", 5)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string

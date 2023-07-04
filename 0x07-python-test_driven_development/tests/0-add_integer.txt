@@ -1,0 +1,63 @@
+This a documentation on the function add_integer
+
+You pass in a and b as floats or integers and returns the summation of them
+
+Here are some test cases
+
+these are some test cases when u are using  correct form of integers
+>>> add_integer=__import__("0-add_integer").add_integer
+>>> add_integer(2,3)
+5
+
+::
+>>> add_integer(2, -3)
+-1
+
+
+
+
+
+these are some test cases when you are using float
+>>> add_integer(3.5, 5.0)
+8
+>>> add_integer(5.4, 3.3)
+8
+>>> add_integer(4.5, -5.3)
+-1
+
+they are first converted to int then evaluated
+
+
+
+these are some test cases when only a is passed and we are using optional b
+>>> add_integer(4.5)
+102
+
+>>> add_integer(5)
+103
+
+>>> add_integer(-5)
+93
+
+
+
+these are some test cases when we are using non int or float type
+>>> add_integer("hello")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(int("hello"))
+Traceback (most recent call last):
+...
+ValueError: invalid literal for int() with base 10: 'hello'
+
+>>> add_integer(float('inf'), 0)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+
+>>> add_integer(0, float('nan'))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer

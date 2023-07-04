@@ -1,0 +1,70 @@
+This a documentation on the function matrix_divided(matrix, div)
+
+You pass in a matrix of float or int and float or int div and matrix is divided by div
+
+Here are some test cases
+
+
+
+
+these are some test cases when u are using  correct form of integers matrix and floats
+
+#when using integers in matrix and int div
+>>> matrix_divided=__import__("2-matrix_divided").matrix_divided
+>>> matrix_divided([[1,3,4], [3,6,46], [3, 5, 4]], 2)
+[[0.5, 1.5, 2.0], [1.5, 3.0, 23.0], [1.5, 2.5, 2.0]]
+
+::
+
+#when using floats in matrix and int div
+>>> matrix_divided([[0.5, 0.8, 0.6], [0.9, 0.4, 0.5]], 2)
+[[0.25, 0.4, 0.3], [0.45, 0.2, 0.25]]
+
+
+#when using integers and float in matrix and int div
+>>> matrix_divided([[0.5, 8, 0.6], [0.9, 4, 0.5]], 2)
+[[0.25, 4.0, 0.3], [0.45, 2.0, 0.25]]
+
+
+#when using integers and float in matrix and float div
+>>> matrix_divided([[0.5, 8, 0.6], [0.9, 4, 0.5]], 0.5)
+[[1.0, 16.0, 1.2], [1.8, 8.0, 1.0]]
+
+
+
+
+these are some test cases when some errors occur
+
+#TypeError  when wrong type is inserted
+>>> matrix_divided([[0.5, 't', 0.6], [0.9, 4, 0.5]], 0.5)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+#this a test for NameError
+>>> matrix_divided([[0.5, t, 0.6], [0.9, 4, 0.5]], 0.5)
+Traceback (most recent call last):
+...
+NameError: name 't' is not defined
+
+
+#this is a test for uneven rows of matrix
+>>> matrix_divided([[0.5, 6, 0.6, 5], [0.9, 4, 0.5]], 0.5)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+
+#this is a test for div not being an int nor float
+>>> matrix_divided([[0.5, 6, 0.6, 5], [0.9, 4, 0.5]], "d")
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+
+#this is a test for div being 0
+>>> matrix_divided([[0.5, 6, 0.6, 5], [0.9, 4, 0.5]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero

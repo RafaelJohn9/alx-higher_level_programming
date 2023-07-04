@@ -1,0 +1,39 @@
+This is a documentation of th function text_indentation(text)
+text must be str
+
+these are text cases with correct input now checking for the different output
+
+#this is a test case on  a normal sentence
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+>>> text_indentation("The? quick brown: fox jumps: over the? lazy dog.")
+The?
+<BLANKLINE>
+quick brown:
+<BLANKLINE>
+fox jumps:
+<BLANKLINE>
+over the?
+<BLANKLINE>
+lazy dog.
+<BLANKLINE>
+
+#this is a test case on a sentence with pretty long spaces
+>>> text_indentation("            The?              quick brown:           fox jumps:       over the?       lazy          dog.        ")
+The?
+<BLANKLINE>
+quick brown:
+<BLANKLINE>
+fox jumps:
+<BLANKLINE>
+over the?
+<BLANKLINE>
+lazy dog.
+<BLANKLINE>
+
+
+these are test cases with wrong input
+#this is a test case on a non str text
+>>> text_indentation(6454)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
