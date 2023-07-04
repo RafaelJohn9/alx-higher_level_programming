@@ -7,6 +7,17 @@ class Rectangle:
     """ a real definition of Rectangle """
     def __init__(self, width=0, height=0):
         """ initialises rectangle attributes"""
+        # parameter checkers
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if width < 0:
+            raise ValueError("height must be >= 0")
+
+        # setters of  attributes
         self.__width = width
         self.__height = height
 
@@ -18,12 +29,8 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """ width parameters and what are being checked"""
-        if not isinstance(self.__width, int):
-            raise TypeError("width must be an integer")
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if self.__width < 0:
-            raise ValueError("width must be >= 0")
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
@@ -36,12 +43,8 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """ height parameters being passed and set"""
-        if not isinstance(self.__height, int):
-            raise TypeError("height must be an integer")
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if self.__width < 0:
-            raise ValueError("height must be >= 0")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
