@@ -2,6 +2,7 @@
 
 ''' prints my name in stdout'''
 
+
 def say_my_name(first_name, last_name=""):
     fullname = ''
 
@@ -12,4 +13,4 @@ def say_my_name(first_name, last_name=""):
     fullname += first_name
     fullname += " "
     fullname += last_name
-    print (f"My name is {fullname}")
+    print(f"My name is {fullname}")

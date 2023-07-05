@@ -31,6 +31,9 @@ these are some test cases when u are using  correct form of integers matrix and 
 [[1.0, 16.0, 1.2], [1.8, 8.0, 1.0]]
 
 
+#when using integers and float in matrix and float inf
+>>> matrix_divided([[0.5, 8, 0.6], [0.9, 4, 0.5]], float("inf"))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 
 these are some test cases when some errors occur
