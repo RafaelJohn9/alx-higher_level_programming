@@ -71,3 +71,29 @@ TypeError: div must be a number
 Traceback (most recent call last):
 ...
 ZeroDivisionError: division by zero
+
+
+
+#this is a test for missing one positional arg
+>>> matrix_divided([[0.5, 6, 0.6, 5], [0.9, 4, 0.5]])
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+
+
+
+
+#this is a test for missing one positional arg
+>>> matrix_divided(div=0)
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'matrix'
+
+
+#this is a test for missing all arg
+>>> matrix_divided()
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+

@@ -2,6 +2,7 @@
 
 """ matrix_divided: divides all elements in a matrix """
 
+
 def matrix_divided(matrix, div):
     """ divides elements in a matrix"""
     if not isinstance(div, (float, int)):
