@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 
 """ this is are testcases for the function max_int"""
-
 import unittest
-import sys
-sys.path.append('~/alx-higher_level_programming/0x07-python-test_driven_development')
-from 6-max_integer import  max_integer
+max_integer = __import__('6-max_integer').max_integer
+
 class Max_test(unittest.TestCase):
     """ it tests the different occurrences of max_int"""
     def test_empty_list(self):
