@@ -11,6 +11,6 @@ def write_file(filename="", text=""):
     existing file
     """
 
-    with open(filename, 'w+') as f:
+    with open(filename, 'w+', encoding="utf8") as f:
         numberOfCharacters = f.write(text)
     return (numberOfCharacters)
