@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 
 """ checks if object is the an instance of the specified class"""
 
