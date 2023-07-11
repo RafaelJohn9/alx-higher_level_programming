@@ -4,6 +4,7 @@
 has a public instance that raises an exception
 """
 
+
 class BaseGeometry:
     """
     this is a class of BaseGeometry

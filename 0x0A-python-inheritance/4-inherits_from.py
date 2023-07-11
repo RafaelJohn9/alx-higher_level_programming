@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" 
+"""
 returns boolean while checking if an obj is inherited
 """
 

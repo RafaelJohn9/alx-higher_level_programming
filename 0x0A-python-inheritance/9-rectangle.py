@@ -7,12 +7,13 @@ a rectangle class that inherits from BaseGeometry
 
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+
 class Rectangle(BaseGeometry):
-    """ 
+    """
     rectangle a specialised subclass
     """
     def __init__(self, width, height):
-        """ attributes of a rectangle 
+        """ attributes of a rectangle
         with some validation being checked
         """
         self.integer_validator("width", width)
@@ -27,7 +28,6 @@ class Rectangle(BaseGeometry):
     def __repr__(self):
         """ returns rep of the rectangle """
         return (f"[Rectangle] {self.__width}/{self.__height}")
-
 
     def __str__(self):
         """ prints out rep of the rectangle """
