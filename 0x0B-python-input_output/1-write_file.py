@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 
 """
 write_file:writes a string to a text file (UTF8)
