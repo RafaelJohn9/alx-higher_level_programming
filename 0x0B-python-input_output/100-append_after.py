@@ -4,6 +4,7 @@
 append_after: appends file
 """
 
+
 def append_after(filename="", search_string="", new_string=""):
     """ appends element in a file
     """
