@@ -6,6 +6,11 @@ pascalTriangle-it prints a pascal triangle until to the n'th row
 
 
 def pascal_triangle(n):
+    """
+    this is a pascal triangle in code
+    where n is the row to be reached
+    """
+
     if n <= 0:
         return ([])
 
