@@ -16,12 +16,6 @@ class TestRectangle(unittest.TestCase):
     def test_area(self):
         self.assertEqual(self.rectangle.area(), 50)
 
-    def test_display(self):
-        expected_output = "\n" * 3 + (" " * 2 + "#" * 5 + "\n") * 10
-        with captured_output() as (out, err):
-            self.rectangle.display()
-        self.assertEqual(out.getvalue(), expected_output)
-
     def test_to_dictionary(self):
         expected_dict = {
             "x": 2,

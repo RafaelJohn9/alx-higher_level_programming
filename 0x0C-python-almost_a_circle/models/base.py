@@ -113,9 +113,7 @@ class Base:
                 reader = csv.reader(file)
                 data = [row for row in reader]
                 attributes = cls.get_csv_attributes()
-                return [cls.create\
-                        (**{attr: value for attr, value in zip(attributes, row)})\
-                        for row in data[1:]]
+                return [cls.create(**{attr: value for attr, value in zip(attributes, row)}) for row in data[1:]]
         except FileNotFoundError:
             return []
 

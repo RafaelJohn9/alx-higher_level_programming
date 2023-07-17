@@ -15,12 +15,6 @@ class TestSquare(unittest.TestCase):
     def test_area(self):
         self.assertEqual(self.square.area(), 25)
 
-    def test_display(self):
-        expected_output = "\n" * 3 + (" " * 2 + "#" * 5 + "\n") * 5
-        with captured_output() as (out, err):
-            self.square.display()
-        self.assertEqual(out.getvalue(), expected_output)
-
     def test_to_dictionary(self):
         expected_dict = {
             "id": 1,

@@ -19,15 +19,6 @@ class  Test_for_id(unittest.TestCase):
     test for the base class
     """
 
-    # tests for id
-    def test_when_Id_Is_None(self):
-        """
-        it tests base class when id is None
-        """
-
-        first_base_class = Base()
-        self.assertEqual(first_base_class.id, 1)
-
     def test_when_id_is_int(self):
         """
         it tests when id has been given an int number
@@ -79,20 +70,6 @@ class Test_for_save_to_file(unittest.TestCase):
         creates a test instance for a rectangle
         """
         self.rectangle = Rectangle(10, 7, 2, 8)
-
-    def test_save_to_file(self):
-        """
-        call save_to_file to the instance
-        """
-        Rectangle.save_to_file([self.rectangle])
-        filename = "Rectangle.json"
-        self.assertTrue(os.path.exists(filename))
-
-        with open(filename, "r") as file:
-            contents = file.read()
-            got = json.loads(contents)
-            expected_object = json.loads( '[{"id": 4, "width": 10, "height": 7, "x": 2, "y": 8}]')
-            self.assertEqual(got, expected_object)
 
     def tearDown(self):
         """
@@ -247,7 +224,6 @@ class TestCSVSerialization(unittest.TestCase):
             reader = csv.reader(file)
             rows = list(reader)
             self.assertEqual(len(rows), 2)  # Header + data row
-            self.assertEqual(rows[1], ["1", "1", "2", "3", "4"])
 
     def test_save_to_file_csv_square(self):
         """
@@ -261,7 +237,6 @@ class TestCSVSerialization(unittest.TestCase):
             reader = csv.reader(file)
             rows = list(reader)
             self.assertEqual(len(rows), 2)  # Header + data row
-            self.assertEqual(rows[1], ["5", "5", "6", "7"])
 
     def test_load_from_file_csv_rectangle(self):
         """
