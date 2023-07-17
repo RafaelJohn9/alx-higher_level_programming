@@ -103,7 +103,7 @@ class Rectangle(Base):
         """
         y attribute getter
         """
-        return (self.__x)
+        return (self.__y)
 
     @y.setter
     def y(self, value):
@@ -153,4 +153,11 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        return (self.__dict__)
+        return {
+                "x": self.x,
+                "y":self.y,
+                "id":self.id,
+                "height":self.height,
+                "width":self.width
+                }
+                
