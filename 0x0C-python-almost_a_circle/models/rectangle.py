@@ -153,6 +153,9 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """
+        to dictionary from instance
+        """
         return {
                 "x": self.x,
                 "y":self.y,
