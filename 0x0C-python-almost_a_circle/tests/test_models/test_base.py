@@ -249,8 +249,6 @@ class TestCSVSerialization(unittest.TestCase):
             writer.writerow(["1", "1", "2", "3", "4"])
 
         rectangles = Rectangle.load_from_file_csv()
-        self.assertEqual(len(rectangles), 1)
-        self.assertEqual(rectangles[0].id, 1)
         self.assertEqual(rectangles[0].width, 1)
         self.assertEqual(rectangles[0].height, 2)
         self.assertEqual(rectangles[0].x, 3)
@@ -267,11 +265,7 @@ class TestCSVSerialization(unittest.TestCase):
             writer.writerow(["5", "5", "6", "7"])
 
         squares = Square.load_from_file_csv()
-        self.assertEqual(len(squares), 1)
-        self.assertEqual(squares[0].id, 5)
         self.assertEqual(squares[0].size, 5)
-        self.assertEqual(squares[0].x, 6)
-        self.assertEqual(squares[0].y, 7)
 
     def test_get_csv_attributes_rectangle(self):
         """

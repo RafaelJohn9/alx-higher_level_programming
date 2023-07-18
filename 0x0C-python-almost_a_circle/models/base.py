@@ -111,9 +111,12 @@ class Base:
         try:
             with open(filename, mode="r", encoding="utf-8") as file:
                 reader = csv.reader(file)
-                data = [row for row in reader]
-                attributes = cls.get_csv_attributes()
-                return [cls.create(**{attr: value for attr, value in zip(attributes, row)}) for row in data[1:]]
+                next(reader)
+                objs = []
+                for row in reader:
+                         obj = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                         objs.append(obj)
+                return objs
         except FileNotFoundError:
             return []
 
