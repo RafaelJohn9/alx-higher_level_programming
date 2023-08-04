@@ -4,7 +4,6 @@
 this is a module that contains unittest of the base class
 """
 
-
 import csv
 import os
 import unittest
@@ -14,7 +13,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class  Test_Base(unittest.TestCase):
+class Test_Base(unittest.TestCase):
     """
     this class tests the methods of Base class
     """
@@ -52,7 +51,9 @@ class  Test_Base(unittest.TestCase):
         stringDictionary = self.base.to_json_string(None)
         self.assertEqual(stringDictionary, [])
         # test for a list with dictionaries
-        stringDictionary = self.base.to_json_string([{"Name":"John", "age":11}, {"Name":"Benjamin", "age":12}])
+        stringDictionary = self.base.to_json_string([
+            {"Name": "John", "age": 11},
+            {"Name": "Benjamin", "age": 12}])
         self.assertIsInstance(stringDictionary, str)
 
     def test_for_save_to_file(self):
@@ -69,3 +70,31 @@ class  Test_Base(unittest.TestCase):
                 pass
         except FileNotFoundError:
             self.fail(f"File {filename} not found.")
+
+    def test_for_from_json_string(self):
+        """
+        tests json string
+        """
+        listOfDictionary = self.base.to_json_string([
+            {"Name": "John", "age": 11},
+            {"Name": "Benjamin", "age": 12}])
+        stringDictionary = json.dumps(listOfDictionary)
+        listedDictionary = self.base.from_json_string(stringDictionary)
+        # when string is none
+        self.assertEqual(self.base.from_json_string(None), [])
+        # when length of dictionary is 0
+        self.assertEqual(self.base.from_json_string([]), [])
+        # when length of dictionary is more than 0
+        self.assertEqual(listedDictionary, listOfDictionary)
+
+    def test_for_create(self):
+        """
+        test for the method create
+        """
+        # creating an instance of a rectangle and checking it
+        rectangle = Rectangle.create(rectangle=Rectangle(1, 5))
+        self.assertIsInstance(rectangle, Rectangle)
+
+        # creating an instance of a Square and checking it
+        square = Square.create(square=Square(7))
+        self.assertIsInstance(square, Square)
