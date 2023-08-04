@@ -6,9 +6,10 @@ a module that contains the subclass Rectangle from base
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """
-    this is class enables one to create an object rectangle 
+    this is class enables one to create an object rectangle
     and thus get valuable attribute and methods
     """
 
@@ -27,7 +28,6 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         if height <= 0:
             raise ValueError("height must b > 0")
-
         if not isinstance(y, int):
             raise TypeError("x must be an integer")
         if not isinstance(y, int):
@@ -101,7 +101,6 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
 
-
     @property
     def y(self):
         """
@@ -139,10 +138,12 @@ class Rectangle(Base):
 
     def __str__(self):
         """
-        shows the rectangle's id number, position (x, y) and dimension (width, height)
+        shows the rectangle's id number,
+        position (x, y) and dimension (width, height)
         """
 
-        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.width}/{self.height}")
+        return (f"[Rectangle] ({self.id}) {self.__x}/\
+                {self.__y} - {self.width}/{self.height}")
 
     def update(self, *args, **kwargs):
         """
@@ -162,9 +163,8 @@ class Rectangle(Base):
         """
         return {
                 "x": self.x,
-                "y":self.y,
-                "id":self.id,
-                "height":self.height,
-                "width":self.width
+                "y": self.y,
+                "id": self.id,
+                "height": self.height,
+                "width": self.width
                 }
-                
