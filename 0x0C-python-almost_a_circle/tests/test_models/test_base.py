@@ -43,3 +43,29 @@ class  Test_Base(unittest.TestCase):
         # when id argument has not been passed by user (again)
         self.base = Base()
         self.assertEqual(self.base.id, 3)
+
+    def test_for_to_json_string(self):
+        """
+        tests the method "to_json_string"
+        """
+        # test for empty list
+        stringDictionary = self.base.to_json_string(None)
+        self.assertEqual(stringDictionary, [])
+        # test for a list with dictionaries
+        stringDictionary = self.base.to_json_string([{"Name":"John", "age":11}, {"Name":"Benjamin", "age":12}])
+        self.assertIsInstance(stringDictionary, str)
+
+    def test_for_save_to_file(self):
+        """
+        save_to_file method being tested
+        tests if object(s) has(ve)  been saved to a file
+        """
+        self.new_1 = Rectangle(1, 1)
+        self.new_2 = Square(1, 1)
+        Base().save_to_file([self.new_1, self.new_2])
+        try:
+            filename = self.base.__class__.__name__ + ".json"
+            with open(filename) as f:
+                pass
+        except FileNotFoundError:
+            self.fail(f"File {filename} not found.")
