@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """
 a module that contains the subclass Rectangle from base
 """
@@ -8,6 +7,11 @@ a module that contains the subclass Rectangle from base
 from models.base import Base
 
 class Rectangle(Base):
+    """
+    this is class enables one to create an object rectangle 
+    and thus get valuable attribute and methods
+    """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         attributes of an object Rectangle
