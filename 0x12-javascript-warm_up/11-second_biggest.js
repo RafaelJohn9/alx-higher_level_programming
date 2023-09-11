@@ -5,14 +5,19 @@
 const listOfArgs = process.argv.slice(2);
 
 function findSecondMax (list) {
-  let max = parseInt(list[0], 10);
-  let secondMax = 0;
+  let max = -Infinity;
+  let secondMax = -Infinity;
+
   for (let num of list) {
     num = parseInt(num, 10);
     if (num > max) {
       secondMax = max;
       max = num;
     }
+    else if (num > secondMax && num < max)
+	  {
+		  secondMax = num;
+	  }
   }
   return (secondMax);
 }
