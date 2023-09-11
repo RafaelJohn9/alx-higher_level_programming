@@ -13,11 +13,9 @@ function findSecondMax (list) {
     if (num > max) {
       secondMax = max;
       max = num;
+    } else if (num > secondMax && num < max) {
+      secondMax = num;
     }
-    else if (num > secondMax && num < max)
-	  {
-		  secondMax = num;
-	  }
   }
   return (secondMax);
 }
