@@ -2,10 +2,9 @@
 # checks the existence of a py file and does the needed adjustment
 
 # Use a for loop to iterate over all *.py files in the current directory
-for file in *.py; do
-  if [[ -e "$file" ]]; then
-    chmod 755 "$file"
-    echo "Adjusted permissions for $file"
-  fi
-done
 
+for file in $(ls | grep -e ".py" -e ".js"); do
+{
+	chmod 755 $file;
+}
+done
