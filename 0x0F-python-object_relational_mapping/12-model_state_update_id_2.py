@@ -6,7 +6,6 @@ object from the databasse hbtn_0e_6_usa
 """
 
 
-
 if __name__ == "__main__":
     """
     a script that changes the name of a State object
@@ -24,7 +23,9 @@ if __name__ == "__main__":
     dbname = sys.argv[3]
 
     # creating engine
-    engine = create_engine(f"mysql+mysqldb://{name}:{passwd}:@localhost:3306/{dbname}")
+    engine = create_engine(
+            f"mysql+mysqldb://{name}:{passwd}:@localhost:3306/{dbname}"
+            )
 
     # create session
     Session = sessionmaker(bind=engine)

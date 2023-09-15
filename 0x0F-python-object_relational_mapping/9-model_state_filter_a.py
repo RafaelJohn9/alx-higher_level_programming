@@ -21,14 +21,20 @@ if __name__ == "__main__":
     dbname = sys.argv[3]
 
     # create engine
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(name, passwd, dbname))
+    engine = create_engine(
+            "mysql+mysqldb://{}:{}@localhost:3306/{}"
+            .format(name, passwd, dbname))
 
     # the query part
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # query
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    states = (
+            session.query(State)
+            .filter(State.name.like('%a%'))
+            .order_by(State.id).all()
+            )
 
     for state in states:
         print(f"{state.id}: {state.name}")

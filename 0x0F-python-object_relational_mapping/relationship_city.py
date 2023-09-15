@@ -8,12 +8,19 @@ named model_city.py that contains the class definition of a city
 from relationship_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
 
+
 class City(Base):
     """
     this is a class that creates the table city
     """
-    
+
     __tablename__ = "cities"
-    id = Column(Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
+    id = Column(
+            Integer,
+            autoincrement=True,
+            primary_key=True,
+            nullable=False,
+            unique=True
+            )
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)

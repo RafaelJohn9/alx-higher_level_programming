@@ -21,7 +21,9 @@ if __name__ == "__main__":
     dbname = sys.argv[3]
 
     # create engine
-    engine = create_engine(f"mysql+mysqldb://{name}:{passwd}@localhost:3306/{dbname}")
+    engine = create_engine(
+            f"mysql+mysqldb://{name}:{passwd}@localhost:3306/{dbname}"
+            )
 
     # create a session
     Session = sessionmaker(bind=engine)
@@ -30,7 +32,6 @@ if __name__ == "__main__":
     # create  query
     # states to be deleted
     states = session.query(State).filter(State.name.like('%a%')).all()
-
 
     for state in states:
         session.delete(state)

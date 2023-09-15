@@ -22,8 +22,13 @@ if __name__ == "__main__":
     db = sql(host='localhost', user=name, passwd=passwd, db=dbname)
 
     # start the sql query
-    cur =  db.cursor()
-    cur.execute("SELECT cities.name FROM cities INNER JOIN states ON cities.state_id=states.id WHERE states.name=%s ORDER BY cities.id ASC", (query, ))
+    cur = db.cursor()
+    cur.execute("""
+                SELECT cities.name FROM cities
+                INNER JOIN states ON cities.state_id=states.id
+                WHERE states.name=%s
+                ORDER BY cities.id ASC
+                """, (query, ))
     cities = cur.fetchall()
 
     listOfStates = []
@@ -33,5 +38,5 @@ if __name__ == "__main__":
 
     print(', '.join(listOfStates))
 
-    db.close()
     cur.close()
+    db.close()

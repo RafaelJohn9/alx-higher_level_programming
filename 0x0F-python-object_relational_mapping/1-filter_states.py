@@ -23,12 +23,12 @@ if __name__ == "__main__":
     # starting the cursor
     cur = db.cursor()
 
-    #processing of query
+    # processing of query
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY ID ASC")
     states = cur.fetchall()
     for state in states:
         print(state)
 
-    #close connection
+    # close connection
     cur.close()
     db.close()

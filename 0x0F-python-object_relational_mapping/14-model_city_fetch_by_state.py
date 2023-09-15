@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-a script that prints all city objects 
+a script that prints all city objects
 from the database hbtn_0e_14_usa
 """
 
@@ -22,14 +22,20 @@ if __name__ == "__main__":
     dbname = sys.argv[3]
 
     # create engine
-    engine = create_engine(f"mysql+mysqldb://{name}:{passwd}@localhost:3306/{dbname}")
+    engine = create_engine(
+            f"mysql+mysqldb://{name}:{passwd}@localhost:3306/{dbname}"
+            )
 
     # create session
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # a query
-    query = session.query(City, State).join(State, City.state_id == State.id).order_by(City.id)
+    query = (
+            session.query(City, State)
+            .join(State, City.state_id == State.id)
+            .order_by(City.id)
+            )
 
     # print all cities
     for city, state in query:

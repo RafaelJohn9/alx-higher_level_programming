@@ -21,7 +21,7 @@ if __name__ == "__main__":
     db = sql(host='localhost', user=name, passwd=passwd, db=dbname)
 
     # start the sql query
-    cur =  db.cursor()
+    cur = db.cursor()
     cur.execute("SELECT * FROM cities")
     cities = cur.fetchall()
 

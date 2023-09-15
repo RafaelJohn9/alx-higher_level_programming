@@ -5,7 +5,7 @@ a script that takes in an arg and displays all values
 in the states table of hbtn_0e_0_usa where name matches the arg
 """
 
-if __name__=="__main__":
+if __name__ == "__main__":
     """the python script"""
     import sys
     import MySQLdb
@@ -16,14 +16,14 @@ if __name__=="__main__":
     dbname = sys.argv[3]
     query = sys.argv[4]
 
-    #db being connected to
+    # db being connected to
     sql = MySQLdb.connect
     db = sql(host="localhost", user=name, passwd=passwd, db=dbname, port=3306)
 
-    #calling the cursor and sql query
+    # calling the cursor and sql query
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE states.name=%s", (query, ))
-    states =  cur.fetchall()
+    states = cur.fetchall()
     for state in states:
         print(state)
 

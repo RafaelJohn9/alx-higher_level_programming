@@ -12,6 +12,7 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
+
 class State(Base):
     """
     Person class that creates Person in the database
