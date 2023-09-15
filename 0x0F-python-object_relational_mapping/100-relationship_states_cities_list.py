@@ -12,10 +12,6 @@ from relationship_city import City
 from sqlalchemy.engine.url import URL
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
-        sys.exit(1)
-
     db = {'drivername': 'mysql+mysqldb',
           'host': 'localhost',
           'port': '3306',
