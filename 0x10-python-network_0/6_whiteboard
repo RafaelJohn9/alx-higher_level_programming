@@ -1,0 +1,6 @@
+If sorted first the time complexity will become bigger than needed.
+
+
+we can cover two grounds at the same time and meet at the middle
+
+we first check if the list_of_integers is none 
