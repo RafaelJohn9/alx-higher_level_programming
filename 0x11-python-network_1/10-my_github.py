@@ -10,7 +10,7 @@ if __name__ == "__main__":
     import sys
 
     username = sys.argv[1]
-    password ={
+    password = {
             "Authorization": sys.argv[2]
             }
 
