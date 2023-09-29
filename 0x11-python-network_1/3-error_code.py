@@ -6,7 +6,6 @@ the body of the response(decoded in utf-8)
 """
 
 
-
 if __name__ == "__main__":
     import urllib.request
     import urllib.parse
