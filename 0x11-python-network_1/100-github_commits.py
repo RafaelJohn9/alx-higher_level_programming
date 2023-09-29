@@ -23,9 +23,9 @@ if __name__ == "__main__":
     url = f"https://api.github.com/repos/{name}/{repo}/commits"
 
     content = requests.get(url)
-    data = content.json()
+    jsonData = content.json()
 
-    for i in range(10):
+    for data in jsonData[:10]:
         print(
-                f"{data[i]['sha']}: {data[i]['commit']['author']['name']}"
+                f"{data['sha']}: {data['commit']['author']['name']}"
                 )
