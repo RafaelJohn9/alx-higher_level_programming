@@ -17,4 +17,4 @@ if __name__ == "__main__":
             "email": email
             }
     content = requests.post(url, data=data)
-    print(content)
+    print(content.text)
