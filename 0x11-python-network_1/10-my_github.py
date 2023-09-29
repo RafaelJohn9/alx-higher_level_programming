@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     username = sys.argv[1]
     password = sys.argv[2]
-    url = f"https://api.github.com/users/{username}"
+    url = f"https://api.github.com/user"
 
     credentials = (username, password)
     response = requests.get(url, auth=credentials)
