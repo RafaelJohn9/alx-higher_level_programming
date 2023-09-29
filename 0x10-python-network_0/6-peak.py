@@ -6,12 +6,12 @@ solves the highest peak problem
 
 def find_peak(list_of_integers):
     """
-   the function calculating the highest peak
-   """
-   if not list_of_integers:
-       return None
+    the function calculating the highest peak
+    """
+    if not list_of_integers:
+        return None
 
-   left = 0
+    left = 0
     right = len(list_of_integers) - 1
 
     while left < right:
@@ -23,5 +23,4 @@ def find_peak(list_of_integers):
         else:
             # Peak may be in the right half, excluding mid
             left = mid + 1
-
     return list_of_integers[left]
