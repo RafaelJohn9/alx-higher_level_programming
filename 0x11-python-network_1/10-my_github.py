@@ -8,15 +8,12 @@ api to display my id
 if __name__ == "__main__":
     import requests
     import sys
+    from requests.auth import HTTPBasicAuth
 
     username = sys.argv[1]
-    password = {
-            "Authorization": sys.argv[2]
-            }
-
+    password = sys.argv[2]
     url = f"https://api.github.com/users/{username}"
 
-    response = requests.get(url, headers=password)
-
-    content = response.json()
-    print(content['id'])
+    credentials = (username, password)
+    response = requests.get(url, auth=credentials)
+    print(response.json()['id'])
