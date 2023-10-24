@@ -8,7 +8,7 @@
  */
 
 const request = require('request');
-const url = 'https://jsonplaceholder.typicode.com/todos';
+const url = process.argv[2];
 
 const myDict = {};
 request.get(url, (error, response, body) => {
