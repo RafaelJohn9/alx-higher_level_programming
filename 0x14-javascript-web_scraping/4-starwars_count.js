@@ -10,15 +10,14 @@
  */
 
 const request = require('request');
-const id = process.argv[2];
-const url = `https://swapi-api.alx-tools.com/api/people/${id}`;
-let userDict = {};
+const givenUrl = process.argv[2];
+const url = `${givenUrl}`;
 
 request.get(url, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    userDict = JSON.parse(body);
-    console.log(userDict.films.length);
+    const count = body.split('people/18').length - 1;
+    console.log(count);
   }
 });
