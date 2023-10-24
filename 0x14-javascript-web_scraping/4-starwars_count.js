@@ -1,12 +1,11 @@
 #!/usr/bin/node
 
 /**
- * a script that prints the title of Star Wars movie
- * where the episode number mathches a given integer
- * first arg is the movie id
- * you must use the starwars api
- * https://swapi-api.alx-tools.com/api/films/:id
- * you must use the module request
+ * a script that prints the number of movies where the char
+ * "Wedge antillies" is present
+ * first arg is the url to the star wars api
+ * wedge anillies character id is 18
+ * script must use the char id to filter the result
  */
 
 const request = require('request');
